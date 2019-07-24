@@ -1,113 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>rainkiku</title>
-    <link href="./code/SyntaxHighlighter.css" type="text/css" rel="stylesheet">
-    <link href="./code/style.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="./code/shCore.js"></script>
-    <script type="text/javascript" src="./code/jquery.js"></script>
-    <script type="text/javascript">
-            $(document).ready(
-                function () {
-                    $(".article_content pre").each(
-                        function () {
-                            var $this = $(this);
-                            if ($this.attr("class").indexOf("brush:") != -1) {
-                                var lang = $this.attr("class").split(';')[0].split(':')[1];
-                                $this.attr('name', 'code');
-                                $this.attr('class', lang);
-                            }
-                        }
-                    );
-                    dp.SyntaxHighlighter.HighlightAll('code');
-                }
-            );
-    </script>
-    <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
-</script>
-</head>
-<body>
-    <div class="rgba">
-        <div class="editor_control_txt">
-            <h1>Here is Rainkiku's home page</h1>
-            <hr />
-            <div class="banner-info">
-            	<ul>
-            		<li><a href="#home">Home</a></li>
-            		<li><a href="#team">Team</a></li>
-            		<li><a href="#version">Version</a></li>
-            		<li><a href="#code">Code</a></li>
-            		<li><a href="#services">Services</a></li>
-            	</ul>
-            </div>
-            <hr />
-            <div class="home" id="home">
-	            <p style="text-align: left; text-indent: 2em;"><font face="STKaiti" size="5" color="green">This is a test page for Rainkiku to practice HTML programming.This time, a code box was added, which uses the JS scripting language Syntax Highlighter; some CSS content was enriched in the code, and the JS code was slightly deleted.</font></p>
-	            <p style="text-align: left; text-indent: 2em;"><font face="STKaiti" size="5" color="green">The following passage is for testing (21:58 on July 21, 2019)</font></p>
-	            <p style="text-align: left; text-indent: 2em;"><font face="STKaiti" size="5" color="green">JQuery is a fast and concise JavaScript framework, which is another excellent JavaScript code base (or JavaScript framework) after Prototype. The purpose of jQuery's design is "write Less, Do More", which advocates writing less code and doing more things. It encapsulates the common functional code of JavaScript, provides a simple JavaScript design pattern, optimizes HTML document operation, event handling, animation design and Ajax interaction.</font></p>
-	            <p style="text-align: left; text-indent: 2em;"><font face="STKaiti" size="5" color="green">The core features of jQuery can be summarized as follows: unique chain grammar and short and clear multi-functional interface; efficient and flexible CSS selector, and can be extended to CSS selector; convenient plug-in extension mechanism and rich plug-ins. JQuery is compatible with various mainstream browsers, such as IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+, etc.</font></p>
-	            <p align="right"><font face="STSong" size="3" color="gold">22:01 on July 21, 2019</font></p>
-        	</div>
-        </div>
-    </div>
-    <div class="code" id="code">
-        <div class="article_content">
-                <!-- <div id="code" PADDING> -->
-            <div class="editor_control_code">
-                <!-- <input type="textarea" name="code" height="900px"> -->
-                <textarea cols="88" rows="5" name="code" class="html">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rainkiku</title>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Home page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this home -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom styles for this home -->
+    <link href="css/home.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/shCore.css">
+    <link rel="stylesheet" type="text/css" href="styles/shThemeDefault.css">
+    <script type="text/javascript" src="src/shCore.js"></script>
+    <script type="text/javascript" src="scripts/shBrushPython.js"></script>
+    <script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
     <style type="text/css">
-        h1 {
-            text-align: center;
-            color:#cd5c5c;
-            font-family:LiSu;
-            font-size: 50px;
-        }
-        body{
-            background-image: url(./image/home_01.png);
-            background-repeat: no-repeat center;
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-            /*position: fixed;*/
-            top: 0;
-            left: 0;
-            background-attachment: fixed;
-        }
-        .rgba {
-            background-color:rgba(255,255,255,0.75);
+        .mycode{
+          width: 100%;
+          height: 400px;
+          overflow: auto;
         }
     </style>
-</head>
-<body>
-    <div class="rgba">
-        <h1>Here is Rainkiku's home page</h1>
-        <hr />
-        <p style="text-align: left; text-indent: 2em;"><font face="STKaiti" size="5" color="green">This is a test page for Rainkiku to practice HTML programming.This time, a code box was added, which uses the JS scripting language Syntax Highlighter; some CSS content was enriched in the code, and the JS code was slightly deleted.</font></p>
-        <p align="right"><font face="STSong" size="3" color="gold">22:01 on July 21, 2019</font></p>
-    </div>
-</body>
-</html>
 
+  </head>
 
+  <body id="page-top">
 
-                </textarea>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Menu Bar</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="image/rainkiku.jpg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#version">Version</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#code">Code</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#map">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#other">Other</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="home">
+        <div class="my-auto">
+          <h1 class="mb-0">Home
+            <span class="text-primary">Page</span>
+          </h1>
+          <div class="subheading mb-5">Nanjing, Jiangsu, China,<a href="mailto:rainkiku@163.com">rainkiku@163.com</a><hr/> 
+            <p align="right"><a href="txt/declaraction.html">declaraction</a></p>
+          </div>
+          <p class="mb-5">This is a test page, mainly used for Rainkiku practice HTML programming, no other purpose, the page will use some network resources, only for personal exercises.</p>
+</div>
+      </section>
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="version">
+        <div class="my-auto">
+          <h2 class="mb-5">Version</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Server 1.0.1</h3>
+              <div class="subheading mb-3">1.0.1.12</div>
+              <p>Here's a note for testing.Version Introduction</p>
             </div>
-        </div>
-	</div>
-</body>
-</html>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">21:33 on July 24, 2019</span>
+            </div>
+          </div>
 
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Server 1.0.2</h3>
+              <div class="subheading mb-3">1.0.2.10</div>
+              <p>Here's a note for testing.Version Introduction</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">21:33 on July 24, 2019</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Server 1.0.3</h3>
+              <div class="subheading mb-3">1.0.3.01</div>
+              <p>Here's a note for testing.Version Introduction</p>
+              <div class="subheading mb-3">1.0.3.03</div>
+              <p>Here's a note for testing.Version Introduction</p>
+              <div class="subheading mb-3">1.0.3.04</div>
+              <p>Here's a note for testing.Version Introduction</p>
+              <div class="subheading mb-3">1.0.3.05</div>
+              <p>Here's a note for testing.Version Introduction</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">21:33 on July 24, 2019</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Server 1.0.4</h3>
+              <div class="subheading mb-3">1.0.4.12</div>
+              <p>Here's a note for testing.Version Introduction</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">21:33 on July 24, 2019</span>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="code">
+        <div class="my-auto">
+          <h2 class="mb-5">Code</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Socket Server</h3>
+              <div class="subheading mb-3">Here's a note for testing.</div>
+              <div class="mycode">
+                      <pre class="brush: python">
+#实现功能接收C结构体并解析输出至屏幕2019年7月2日22点47分
+import socket
+import threading
+import time
+import os
+import linecache
+from ctypes import *
+
+class Data(Structure):
+    _pack_ = 1
+    _fields_ = [('Plate_number',c_short),
+        ('Student_number',c_char*14),
+        ('Temperature',c_float),
+        ('Time',c_uint)]
+    def encode(self):
+        return string_at(addressof(self),sizeof(self))
+    def decode(self, data):
+        memmove(addressof(self), data, sizeof(self))
+        return len(data)
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind(('127.0.0.1',8888))
+s.listen(5)
+path = os.getcwd()
+read_filepath = path + "/file/server.txt"
+write_filepath = path + "/file/"
+print('Waiting for connection...')
+
+def text_create(path, name, msg):       
+    full_path = path + name + '.txt' 
+    file = open(full_path,'w')             
+    file.write(msg) 
+    file.close() 
+    print('File creation completed\n')
+
+def read_file(path):
+    with open(path,'r+',encoding='utf-8-sig') as f:
+        str = f.read()
+    return str
+
+def tcp_send():
+    print('Prepare to send server data to %s:%s' % addr)
+    count = len(open(read_filepath, 'r').readlines())
+    while count:
+        #data = read_file(filepath)
+        data = linecache.getline(read_filepath,count)
+        count -= 1
+        time.sleep(1)
+        #if data == 'exit':
+        #    count=0
+        print('Server File Data is:%s\n' % data)
+        sock.send(data.encode('utf-8-sig'))
+
+def tcp_receive():
+    data = sock.recv(1024)
+    data_str = Data()
+    data_str.decode(data)
+    time.sleep(1)
+    #text_create(write_filepath,'client',data.decode('utf-8-sig'))
+    #print(data.decode('utf-8-sig'))
+    print(data_str.Plate_number)
+    print(data_str.Student_number.decode('utf-8-sig'))
+    print(data_str.Temperature)
+    time_local = time.localtime(data_str.Time)
+    dt = time.strftime("%Y-%m-%d %H:%M:%S",time_local)
+    print(dt)
+
+def tcplink(sock, addr):
+    tcp_send()
+    tcp_receive()
+    sock.close()
+    print('Connection from %s:%s closed.' % addr)
+
+while True:
+    sock, addr = s.accept()
+    t = threading.Thread(target=tcplink, args=(sock, addr))
+    t.start()
+
+
+        </pre>
+      </div>
+              <p>server.py</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">21:12 on July 24, 2019</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Socket client</h3>
+              <div class="subheading mb-3">Here's a note for testing.</div>
+                            <div class="mycode">
+                      <pre class="brush: cpp">
+void socket_sample(void *parameter)
+{
+//  void close();
+//  int write();
+    const char server_ip_str[]="192.168.1.102";
+//  const char server_ip_str[]="58.193.227.136";
+    const unsigned short server_port=9000;
+    
+    struct sockaddr_in local_addr;
+  while(1){
+    local_addr.sin_addr.s_addr = inet_addr(server_ip_str);
+    local_addr.sin_family = AF_INET;
+    int ret;
+    
+    local_addr.sin_port = htons(server_port);
+    int client = socket(AF_INET,SOCK_STREAM,0);
+    
+    if(client == -1){
+      rt_kprintf("Invalid socket.\n");
+      while(1){
+        rt_thread_delay(10000);
+      }
+    }
+    
+    rt_thread_delay(5000);
+    //try connect Server
+
+    ret = connect(client,(struct sockaddr*)&local_addr,sizeof(local_addr));
+    if(ret == -1){
+      close(client);
+      rt_kprintf("Connect server fail %s.\n",server_ip_str);
+      rt_thread_delay(1000);
+      rt_kprintf("Attempt to reconnect.\n");
+    }
+    else{
+      rt_kprintf("connected to server.\n");
+      while(1){
+        tcp_send(client);
+        rt_thread_delay(5000);
+      }
+      break;
+    }
+  }
+}
+        </pre>
+      </div>
+              <p>client.c</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">21:12 on July 24, 2019</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="map">
+        <div class="my-auto">
+          <h2 class="mb-5">Map</h2>
+
+          <div class="subheading mb-3">Here's a note for testing.</div>
+          <!-- <ul><li></li></ul> -->
+
+          <div class="subheading mb-3">Link</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              1</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              2</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+             3</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              4</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="team">
+        <div class="my-auto">
+          <h2 class="mb-5">Team</h2>
+          <p>Here's a note for testing.</p>
+          <p class="mb-0">Here's a note for testing.</p>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="other">
+        <div class="my-auto">
+          <h2 class="mb-5">other</h2>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              1-Here's a note for testing.</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              2-Here's a note for testing.</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              3-Here's a note for testing.</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              4-Here's a note for testing.</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              5-Here's a note for testing.</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              6-Here's a note for testing.</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              7-Here's a note for testing.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this home -->
+    <script src="js/home.min.js"></script>
+
+  </body>
+
+</html>
