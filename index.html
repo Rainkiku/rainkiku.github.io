@@ -26,6 +26,7 @@
     <script type="text/javascript" src="scripts/shBrushPython.js"></script>
     <script type="text/javascript" src="scripts/shBrushCpp.js"></script>
     <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <SCRIPT language=JavaScript>function password() { var testV = 1; var pass1 = prompt('请输入密码:',''); while (testV < 3) { if (!pass1) history.go(-1); if (pass1 == "rainkiku.com") { alert('密码正确!'); break; } testV+=-1; var pass1 = prompt('密码错误!请重新输入:'); } if (pass1!="password" & testV ==3) history.go(-1); return " "; } document.write(password()); </SCRIPT>
     <style type="text/css">
         .mycode{
           width: 100%;
@@ -152,7 +153,7 @@
               <h3 class="mb-0">Socket Server</h3>
               <div class="subheading mb-3">Here's a note for testing.</div>
               <div class="mycode">
-                      <pre class="brush: python">
+                <pre class="brush: python">
 #实现功能接收C结构体并解析输出至屏幕2019年7月2日22点47分
 import socket
 import threading
