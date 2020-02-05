@@ -51,6 +51,15 @@ maxTwo1 = sorted(data_2, key = lambda x:int(x['dead']), reverse=True)
 maxTwo2 = sorted(data_2, key = lambda x:int(x['heal']), reverse=True)
 maxTwo = max([int(maxTwo1[0]['dead']), int(maxTwo2[0]['heal'])])
 
+# 构造各市数据
+outall_3 = ''
+for data_3 in data_1:
+    strstr = data_3['name']
+    data_3 = data_3['children']
+    for single in data_3:
+        outstr = '\t\t{ name: \'' + single['name'] + '\', value: '+str(single['total']['confirm'])+' },\n'
+        outall_3 = outall_3 +outstr
+
 # 获取当前时间，并格式化如21:12 on July 24, 2019
 timeNow = time.strftime("%H:%M on %b %d, %Y", time.localtime())
 
@@ -62,6 +71,7 @@ fid.close()
 # 写入数据集
 oriHtml = oriStr.replace('//insertData//',outall_1)
 oriHtml = oriHtml.replace('//dataInsert//',outall_2)
+oriHtml = oriHtml.replace('//dataCity//',outall_3)
 oriHtml = oriHtml.replace('//TimeNow//',timeNow)
 # 写入线图和柱图的Y轴最大值和分隔区间
 interval1 = int(int(maxOne)/1000)+1

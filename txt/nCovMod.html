@@ -20,10 +20,32 @@
     <script src="../js/echarts.min.js"></script>
     <script src = "../js/china.js"></script>
     <style type="text/css">
-        .mycode{
+        .mydata{
           width: 100%;
-          height: 500px;
+          height: 1000px;
           overflow: auto;
+        }
+        .table.gridtable {
+        font-family: verdana,arial,sans-serif;
+        font-size:11px;
+        color:#333333;
+        border-width: 1px;
+        border-color: #666666;
+        border-collapse: collapse;
+        }
+        .table.gridtable th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+        }
+        .table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
         }
     </style>
 
@@ -54,6 +76,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#real_time">Real time</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#province">province</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#links">Links</a>
@@ -110,7 +135,7 @@
             </div>
           </div>
         </div>
-        <div class="mycode" id="main_1"></div>
+        <div class="mydata" id="main_1"></div>
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="real_time">
@@ -127,7 +152,28 @@
             </div>
           </div>
         </div>
-        <div class="mycode" id="main_2"></div>
+        <div class="mydata" id="main_2"></div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="province">
+      <div class="my-auto">
+          <h2 class="mb-5">province</h2>
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">各省市确诊数</h3>
+              <div class="subheading mb-3">Data source: Tencent News Center</div>              
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">//TimeNow//</span>
+            </div>
+          </div>
+        </div>
+        <table class="gridtable" id="table_1">       
+            <tr>
+                <th>地区</th><th>确诊人数</th>
+            </tr>
+        </table>
+                <!-- <div class="mycode" id="main_2"></div> -->
       </section>
 
 
@@ -204,11 +250,12 @@
               seriesIndex: [0],
               type: 'piecewise',
               pieces: [
-                  { min: 4000, color: 'rgb(254,57,101)' },
-                  { min: 250, max: 3999, color: 'rgb(252,157,154)' },
-                  { min: 100, max: 249, color: 'rgb(249,205,173)' },
-                  { min: 10, max: 99, color: 'rgb(200,200,169)' },
-                  { min: 1, max: 9, color: 'rgb(131,175,155)' },
+                  { min: 10000, color: 'rgb(162,8,8)' },
+                  { min: 1000, max: 4999, color: 'rgb(209,23,23)' },
+                  { min: 5000, max: 9999, color: 'rgb(255,19,19)' },
+                  { min: 100, max: 999, color: 'rgb(255,50,50)' },
+                  { min: 10, max: 99, color: 'rgb(255,113,113)' },
+                  { min: 1, max: 9, color: 'rgb(255,174,174)' },
               ],
               textStyle: {
                   color: '#000000'
@@ -233,7 +280,7 @@
                       borderColor: '#666666',
                   },
                   emphasis: {
-                      areaColor: '#0099CC',
+                      areaColor: '#ffff00',
                   }
               }
           },
@@ -259,7 +306,9 @@
       // 指定图表的配置项和数据
       var option_2 = {
           title: {
-              text: ''
+              text: '新型冠状病毒疫情时间序列数据图',
+              x:'center',
+              y:'top'
           },
           tooltip: {
               trigger: 'axis'
@@ -270,6 +319,9 @@
               }
           },
           legend: {
+            x:'center',
+            y:'top',
+            top:'5%'
           },
           dataset: {
               source: [
@@ -393,6 +445,18 @@
       // 使用刚指定的配置项和数据显示图表。
       myChart_2.setOption(option_2);
     </script>
+    <script type="text/javascript">
+        var dataCity = [//dataCity//
+        ];
+        function showData(dataCity) {
+        var str = "";//定义用于拼接的字符串
+            for (var i = 0; i < 2; i++) {
+                str = "<tr><td>" + "123" + "</td><td>" + "234" + "</td></tr>";
+                $("#table_1").html(str); //追加到table中        
+            }
+        }
+    </script>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
