@@ -17,12 +17,18 @@ jsonRes_1 = json.loads(resstr_1)
 jsonRes_2 = json.loads(resstr_2)
 data_1 = jsonRes_1['data']
 data_2 = jsonRes_2['data']
+data_4 = json.loads(data_1)['chinaTotal']
 data_1 = json.loads(data_1)['areaTree']
 data_1 = data_1[0]['children']
 data_2=json.loads(data_2)
 
 # 数据根据日期排序 
 data_2.sort(key = lambda x:x['date'])
+
+#构造国内数据
+outall_4 = ''
+outall_4 = '\t\t{ name: \'' + '确诊病例' + '\', value: '+str(data_4['confirm'])+' },\n'+ '\t\t{ name: \'' + '疑似病例' + '\', value: '+str(data_4['suspect'])+' },\n' + '\t\t{ name: \'' + '死亡病例' + '\', value: '+str(data_4['dead'])+' },\n' + '\t\t{ name: \'' + '治愈病例' + '\', value: '+str(data_4['heal'])+' },\n'
+
 
 #构造echarts数据
 outall_1 = ''
@@ -54,11 +60,15 @@ maxTwo = max([int(maxTwo1[0]['dead']), int(maxTwo2[0]['heal'])])
 # 构造各市数据
 outall_3 = ''
 for data_3 in data_1:
-    strstr = data_3['name']
+    strstr = data_3
+    out_str = '\t\t<tr class="alt"><td>' + strstr['name'] + '</td><td>'+str(strstr['total']['confirm'])+'</td><td>'+str(strstr['total']['dead'])+'</td><td>'+str(strstr['total']['heal'])+'</td><td>'+str(strstr['today']['confirm'])+'</td><td>'+str(strstr['today']['dead'])+'</td><td>'+str(strstr['today']['heal'])+'</td></tr>\n'
+    outall_3 = outall_3 +out_str
     data_3 = data_3['children']
     for single in data_3:
-        outstr = '\t\t{ name: \'' + single['name'] + '\', value: '+str(single['total']['confirm'])+' },\n'
+        outstr = '\t\t<tr><td>' + single['name'] + '</td><td>'+str(single['total']['confirm'])+'</td><td>'+str(single['total']['dead'])+'</td><td>'+str(single['total']['heal'])+'</td><td>'+str(single['today']['confirm'])+'</td><td>'+str(single['today']['dead'])+'</td><td>'+str(single['today']['heal'])+'</td></tr>\n'
         outall_3 = outall_3 +outstr
+
+outall_3 = outall_3.replace("'","").replace(r"\n","")
 
 # 获取当前时间，并格式化如21:12 on July 24, 2019
 timeNow = time.strftime("%H:%M on %b %d, %Y", time.localtime())
@@ -72,6 +82,7 @@ fid.close()
 oriHtml = oriStr.replace('//insertData//',outall_1)
 oriHtml = oriHtml.replace('//dataInsert//',outall_2)
 oriHtml = oriHtml.replace('//dataCity//',outall_3)
+oriHtml = oriHtml.replace('//dataCountry//',outall_4)
 oriHtml = oriHtml.replace('//TimeNow//',timeNow)
 # 写入线图和柱图的Y轴最大值和分隔区间
 interval1 = int(int(maxOne)/1000)+1

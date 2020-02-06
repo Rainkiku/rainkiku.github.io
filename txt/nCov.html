@@ -17,6 +17,9 @@
     <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
     <link href="../css/home.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+
     <script src="../js/echarts.min.js"></script>
     <script src = "../js/china.js"></script>
     <style type="text/css">
@@ -24,28 +27,6 @@
           width: 100%;
           height: 800px;
           overflow: auto;
-        }
-        .table.gridtable {
-        font-family: verdana,arial,sans-serif;
-        font-size:11px;
-        color:#333333;
-        border-width: 1px;
-        border-color: #666666;
-        border-collapse: collapse;
-        }
-        .table.gridtable th {
-        border-width: 1px;
-        padding: 8px;
-        border-style: solid;
-        border-color: #666666;
-        background-color: #dedede;
-        }
-        .table.gridtable td {
-            border-width: 1px;
-            padding: 8px;
-            border-style: solid;
-            border-color: #666666;
-            background-color: #ffffff;
         }
     </style>
 
@@ -109,15 +90,20 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">//Time Title//</h3>
-              <div class="subheading mb-3">//Time//</div>
-              <p>//Updating...//</p>
+              <h3 class="mb-0">国内概况</h3>
+              <div class="subheading mb-3">Data source: Tencent News Center</div>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">22:54 on Feb 05, 2020</span>
+              <span class="text-primary">23:19 on Feb 06, 2020</span>
             </div>
           </div>
-
+<!--           <table id="table_2">
+            <tr>
+                <th>确诊</th><th>疑似</th><th>死亡</th><th>治愈</th>
+    //data/Country//
+        </table>
+ -->
+        <div class="mydata" id="main_1"></div>
         </div>
       </section>
 
@@ -131,11 +117,11 @@
               <div class="subheading mb-3">Data source: Tencent News Center</div>              
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">22:54 on Feb 05, 2020</span>
+              <span class="text-primary">23:19 on Feb 06, 2020</span>
             </div>
           </div>
         </div>
-        <div class="mydata" id="main_1"></div>
+        <div class="mydata" id="main_2"></div>
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="real_time">
@@ -148,11 +134,11 @@
               <div class="subheading mb-3">Data source: Tencent News Center</div>              
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">22:54 on Feb 05, 2020</span>
+              <span class="text-primary">23:19 on Feb 06, 2020</span>
             </div>
           </div>
         </div>
-        <div class="mydata" id="main_2"></div>
+        <div class="mydata" id="main_3"></div>
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="province">
@@ -164,16 +150,469 @@
               <div class="subheading mb-3">Data source: Tencent News Center</div>              
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">22:54 on Feb 05, 2020</span>
+              <span class="text-primary">23:19 on Feb 06, 2020</span>
             </div>
           </div>
-        </div>
-        <table class="gridtable" id="table_1">       
+        
+        <div class="mydata"><table id="table_1">
             <tr>
-                <th>地区</th><th>确诊人数</th>
-            </tr>
-        </table>
-                <!-- <div class="mycode" id="main_2"></div> -->
+                <th rowspan="2">地区</th><th colspan="3">累计</th><th colspan="3">新增<tr><th>确诊</th><th>死亡</th><th>治愈</th><th>确诊</th><th>死亡</th><th>治愈</th>
+    		<tr class="alt"><td>湖北</td><td>19665</td><td>549</td><td>680</td><td>2987</td><td>70</td><td>150</td></tr>
+		<tr><td>武汉</td><td>10117</td><td>414</td><td>459</td><td>1766</td><td>52</td><td>86</td></tr>
+		<tr><td>孝感</td><td>1886</td><td>25</td><td>9</td><td>424</td><td>7</td><td>3</td></tr>
+		<tr><td>黄冈</td><td>1807</td><td>29</td><td>64</td><td>162</td><td>4</td><td>12</td></tr>
+		<tr><td>随州</td><td>834</td><td>9</td><td>9</td><td>128</td><td>1</td><td>0</td></tr>
+		<tr><td>荆州</td><td>801</td><td>10</td><td>18</td><td>88</td><td>1</td><td>6</td></tr>
+		<tr><td>襄阳</td><td>787</td><td>2</td><td>25</td><td>52</td><td>0</td><td>18</td></tr>
+		<tr><td>黄石</td><td>566</td><td>2</td><td>25</td><td>57</td><td>0</td><td>7</td></tr>
+		<tr><td>宜昌</td><td>563</td><td>6</td><td>9</td><td>67</td><td>2</td><td>0</td></tr>
+		<tr><td>荆门</td><td>508</td><td>17</td><td>21</td><td>86</td><td>1</td><td>5</td></tr>
+		<tr><td>鄂州</td><td>423</td><td>18</td><td>8</td><td>41</td><td>0</td><td>2</td></tr>
+		<tr><td>咸宁</td><td>399</td><td>1</td><td>3</td><td>15</td><td>1</td><td>1</td></tr>
+		<tr><td>十堰</td><td>353</td><td>0</td><td>14</td><td>35</td><td>0</td><td>5</td></tr>
+		<tr><td>仙桃</td><td>265</td><td>5</td><td>0</td><td>40</td><td>1</td><td>0</td></tr>
+		<tr><td>恩施州</td><td>144</td><td>0</td><td>10</td><td>6</td><td>0</td><td>4</td></tr>
+		<tr><td>天门</td><td>138</td><td>10</td><td>1</td><td>10</td><td>0</td><td>1</td></tr>
+		<tr><td>潜江</td><td>64</td><td>1</td><td>0</td><td>10</td><td>0</td><td>0</td></tr>
+		<tr><td>神农架</td><td>10</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>地区待确认</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>广东</td><td>970</td><td>0</td><td>59</td><td>100</td><td>0</td><td>20</td></tr>
+		<tr><td>深圳</td><td>316</td><td>0</td><td>22</td><td>27</td><td>0</td><td>6</td></tr>
+		<tr><td>广州</td><td>270</td><td>0</td><td>3</td><td>33</td><td>0</td><td>0</td></tr>
+		<tr><td>珠海</td><td>73</td><td>0</td><td>4</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>佛山</td><td>57</td><td>0</td><td>4</td><td>8</td><td>0</td><td>3</td></tr>
+		<tr><td>东莞</td><td>47</td><td>0</td><td>1</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>中山</td><td>44</td><td>0</td><td>3</td><td>9</td><td>0</td><td>0</td></tr>
+		<tr><td>惠州</td><td>35</td><td>0</td><td>1</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>汕头</td><td>21</td><td>0</td><td>3</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>湛江</td><td>19</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>肇庆</td><td>14</td><td>0</td><td>1</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>阳江</td><td>13</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>梅州</td><td>12</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>清远</td><td>10</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>江门</td><td>9</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td></tr>
+		<tr><td>揭阳</td><td>7</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>韶关</td><td>6</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>茂名</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>汕尾</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>潮州</td><td>5</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>河源</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>地区待确认</td><td>0</td><td>0</td><td>12</td><td>0</td><td>0</td><td>10</td></tr>
+		<tr class="alt"><td>浙江</td><td>954</td><td>0</td><td>95</td><td>59</td><td>0</td><td>18</td></tr>
+		<tr><td>温州</td><td>396</td><td>0</td><td>36</td><td>32</td><td>0</td><td>8</td></tr>
+		<tr><td>杭州</td><td>151</td><td>0</td><td>15</td><td>10</td><td>0</td><td>1</td></tr>
+		<tr><td>宁波</td><td>126</td><td>0</td><td>9</td><td>6</td><td>0</td><td>5</td></tr>
+		<tr><td>台州</td><td>124</td><td>0</td><td>14</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>金华</td><td>47</td><td>0</td><td>9</td><td>3</td><td>0</td><td>1</td></tr>
+		<tr><td>绍兴</td><td>33</td><td>0</td><td>3</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>嘉兴</td><td>30</td><td>0</td><td>1</td><td>3</td><td>0</td><td>1</td></tr>
+		<tr><td>丽水</td><td>16</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>衢州</td><td>15</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>湖州</td><td>9</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>舟山</td><td>7</td><td>0</td><td>4</td><td>0</td><td>0</td><td>2</td></tr>
+		<tr class="alt"><td>河南</td><td>851</td><td>2</td><td>63</td><td>87</td><td>0</td><td>14</td></tr>
+		<tr><td>信阳</td><td>164</td><td>0</td><td>6</td><td>26</td><td>0</td><td>0</td></tr>
+		<tr><td>南阳</td><td>111</td><td>2</td><td>1</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>郑州</td><td>102</td><td>0</td><td>28</td><td>10</td><td>0</td><td>9</td></tr>
+		<tr><td>驻马店</td><td>98</td><td>0</td><td>2</td><td>16</td><td>0</td><td>0</td></tr>
+		<tr><td>商丘</td><td>65</td><td>0</td><td>3</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>周口</td><td>59</td><td>0</td><td>1</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>新乡</td><td>41</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>平顶山</td><td>41</td><td>0</td><td>0</td><td>7</td><td>0</td><td>0</td></tr>
+		<tr><td>安阳</td><td>37</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>漯河</td><td>26</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>许昌</td><td>26</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>洛阳</td><td>21</td><td>0</td><td>1</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>开封</td><td>18</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>焦作</td><td>17</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>鹤壁</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>三门峡</td><td>7</td><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>濮阳</td><td>5</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>济源示范区</td><td>3</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>地区待确认</td><td>0</td><td>0</td><td>16</td><td>0</td><td>0</td><td>4</td></tr>
+		<tr class="alt"><td>湖南</td><td>711</td><td>0</td><td>69</td><td>50</td><td>0</td><td>25</td></tr>
+		<tr><td>长沙</td><td>179</td><td>0</td><td>10</td><td>15</td><td>0</td><td>2</td></tr>
+		<tr><td>岳阳</td><td>93</td><td>0</td><td>2</td><td>4</td><td>0</td><td>2</td></tr>
+		<tr><td>邵阳</td><td>74</td><td>0</td><td>3</td><td>6</td><td>0</td><td>1</td></tr>
+		<tr><td>常德</td><td>62</td><td>0</td><td>14</td><td>6</td><td>0</td><td>11</td></tr>
+		<tr><td>娄底</td><td>51</td><td>0</td><td>3</td><td>6</td><td>0</td><td>0</td></tr>
+		<tr><td>衡阳</td><td>43</td><td>0</td><td>5</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>益阳</td><td>41</td><td>0</td><td>6</td><td>1</td><td>0</td><td>5</td></tr>
+		<tr><td>株洲</td><td>41</td><td>0</td><td>2</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>怀化</td><td>36</td><td>0</td><td>6</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>永州</td><td>32</td><td>0</td><td>8</td><td>2</td><td>0</td><td>3</td></tr>
+		<tr><td>郴州</td><td>25</td><td>0</td><td>2</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>湘潭</td><td>24</td><td>0</td><td>5</td><td>1</td><td>0</td><td>1</td></tr>
+		<tr><td>湘西自治州</td><td>7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>张家界</td><td>3</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>江西</td><td>600</td><td>0</td><td>37</td><td>52</td><td>0</td><td>10</td></tr>
+		<tr><td>南昌</td><td>149</td><td>0</td><td>10</td><td>15</td><td>0</td><td>3</td></tr>
+		<tr><td>九江</td><td>92</td><td>0</td><td>3</td><td>6</td><td>0</td><td>1</td></tr>
+		<tr><td>上饶</td><td>78</td><td>0</td><td>5</td><td>9</td><td>0</td><td>0</td></tr>
+		<tr><td>新余</td><td>78</td><td>0</td><td>5</td><td>9</td><td>0</td><td>1</td></tr>
+		<tr><td>宜春</td><td>54</td><td>0</td><td>4</td><td>6</td><td>0</td><td>0</td></tr>
+		<tr><td>赣州</td><td>52</td><td>0</td><td>2</td><td>4</td><td>0</td><td>1</td></tr>
+		<tr><td>抚州</td><td>46</td><td>0</td><td>5</td><td>2</td><td>0</td><td>4</td></tr>
+		<tr><td>萍乡</td><td>23</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>吉安</td><td>15</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>鹰潭</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>景德镇</td><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>安徽</td><td>591</td><td>0</td><td>45</td><td>61</td><td>0</td><td>22</td></tr>
+		<tr><td>合肥</td><td>104</td><td>0</td><td>9</td><td>11</td><td>0</td><td>4</td></tr>
+		<tr><td>阜阳</td><td>95</td><td>0</td><td>11</td><td>11</td><td>0</td><td>8</td></tr>
+		<tr><td>亳州</td><td>66</td><td>0</td><td>8</td><td>8</td><td>0</td><td>6</td></tr>
+		<tr><td>蚌埠</td><td>64</td><td>0</td><td>0</td><td>16</td><td>0</td><td>0</td></tr>
+		<tr><td>安庆</td><td>60</td><td>0</td><td>3</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>六安</td><td>36</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>马鞍山</td><td>30</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>芜湖</td><td>26</td><td>0</td><td>2</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>宿州</td><td>25</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>铜陵</td><td>20</td><td>0</td><td>3</td><td>1</td><td>0</td><td>2</td></tr>
+		<tr><td>淮北</td><td>17</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>淮南</td><td>12</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>滁州</td><td>11</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>池州</td><td>11</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>黄山</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>宣城</td><td>5</td><td>0</td><td>3</td><td>1</td><td>0</td><td>2</td></tr>
+		<tr class="alt"><td>重庆</td><td>400</td><td>2</td><td>24</td><td>25</td><td>0</td><td>9</td></tr>
+		<tr><td>万州区</td><td>70</td><td>1</td><td>2</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>云阳县</td><td>19</td><td>0</td><td>3</td><td>1</td><td>0</td><td>1</td></tr>
+		<tr><td>九龙坡区</td><td>19</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>江北区</td><td>18</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td></tr>
+		<tr><td>开州区</td><td>18</td><td>0</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+		<tr><td>渝中区</td><td>18</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>垫江县</td><td>17</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>忠县</td><td>15</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>合川区</td><td>15</td><td>0</td><td>0</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>两江新区</td><td>14</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>綦江区</td><td>13</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>石柱县</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>渝北区</td><td>12</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>长寿区</td><td>12</td><td>0</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+		<tr><td>奉节县</td><td>12</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>巫溪县</td><td>11</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>潼南区</td><td>10</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>丰都县</td><td>9</td><td>0</td><td>1</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>璧山区</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>南岸区</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>巫山县</td><td>8</td><td>0</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>荣昌区</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>大足区</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>铜梁区</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>大渡口区</td><td>7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>梁平区</td><td>4</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>江津区</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>高新区</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>涪陵区</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>巴南区</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>永川区</td><td>3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>城口县</td><td>2</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>黔江区</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>沙坪坝区</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>彭水县</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>秀山县</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>武隆区</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>酉阳县</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>万盛经开区</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>江苏</td><td>373</td><td>0</td><td>36</td><td>32</td><td>0</td><td>13</td></tr>
+		<tr><td>苏州</td><td>60</td><td>0</td><td>4</td><td>5</td><td>0</td><td>0</td></tr>
+		<tr><td>南京</td><td>52</td><td>0</td><td>11</td><td>5</td><td>0</td><td>1</td></tr>
+		<tr><td>徐州</td><td>45</td><td>0</td><td>3</td><td>0</td><td>0</td><td>2</td></tr>
+		<tr><td>淮安</td><td>34</td><td>0</td><td>2</td><td>8</td><td>0</td><td>1</td></tr>
+		<tr><td>无锡</td><td>28</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>泰州</td><td>28</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>常州</td><td>27</td><td>0</td><td>5</td><td>3</td><td>0</td><td>3</td></tr>
+		<tr><td>南通</td><td>27</td><td>0</td><td>4</td><td>2</td><td>0</td><td>4</td></tr>
+		<tr><td>连云港</td><td>22</td><td>0</td><td>2</td><td>2</td><td>0</td><td>1</td></tr>
+		<tr><td>盐城</td><td>16</td><td>0</td><td>3</td><td>1</td><td>0</td><td>1</td></tr>
+		<tr><td>扬州</td><td>15</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>宿迁</td><td>11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>镇江</td><td>8</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>山东</td><td>347</td><td>0</td><td>30</td><td>40</td><td>0</td><td>15</td></tr>
+		<tr><td>青岛</td><td>41</td><td>0</td><td>5</td><td>6</td><td>0</td><td>2</td></tr>
+		<tr><td>济南</td><td>34</td><td>0</td><td>3</td><td>5</td><td>0</td><td>3</td></tr>
+		<tr><td>临沂</td><td>32</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>济宁</td><td>32</td><td>0</td><td>4</td><td>7</td><td>0</td><td>1</td></tr>
+		<tr><td>烟台</td><td>30</td><td>0</td><td>2</td><td>3</td><td>0</td><td>2</td></tr>
+		<tr><td>威海</td><td>29</td><td>0</td><td>5</td><td>2</td><td>0</td><td>3</td></tr>
+		<tr><td>德州</td><td>26</td><td>0</td><td>2</td><td>2</td><td>0</td><td>1</td></tr>
+		<tr><td>潍坊</td><td>21</td><td>0</td><td>0</td><td>5</td><td>0</td><td>0</td></tr>
+		<tr><td>泰安</td><td>18</td><td>0</td><td>1</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>枣庄</td><td>17</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>聊城</td><td>15</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>日照</td><td>14</td><td>0</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+		<tr><td>淄博</td><td>14</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>菏泽</td><td>13</td><td>0</td><td>2</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>滨州</td><td>11</td><td>0</td><td>3</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr class="alt"><td>四川</td><td>321</td><td>1</td><td>28</td><td>20</td><td>0</td><td>5</td></tr>
+		<tr><td>成都</td><td>97</td><td>1</td><td>19</td><td>5</td><td>0</td><td>3</td></tr>
+		<tr><td>南充</td><td>29</td><td>0</td><td>2</td><td>1</td><td>0</td><td>1</td></tr>
+		<tr><td>广安</td><td>24</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>达州</td><td>20</td><td>0</td><td>1</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>巴中</td><td>19</td><td>0</td><td>0</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>绵阳</td><td>18</td><td>0</td><td>2</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>内江</td><td>16</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>德阳</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>泸州</td><td>12</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>甘孜</td><td>12</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>攀枝花</td><td>11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>自贡</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>宜宾</td><td>8</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>凉山</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>雅安</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>广元</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>遂宁</td><td>5</td><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>眉山</td><td>5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>乐山</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>资阳</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>阿坝州</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>北京</td><td>274</td><td>1</td><td>38</td><td>21</td><td>0</td><td>14</td></tr>
+		<tr><td>朝阳</td><td>48</td><td>0</td><td>0</td><td>5</td><td>0</td><td>0</td></tr>
+		<tr><td>海淀</td><td>47</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>西城</td><td>34</td><td>0</td><td>0</td><td>5</td><td>0</td><td>0</td></tr>
+		<tr><td>大兴</td><td>32</td><td>0</td><td>2</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>外地来京</td><td>21</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>丰台</td><td>20</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>昌平</td><td>15</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>通州</td><td>13</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>石景山</td><td>11</td><td>0</td><td>0</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>房山</td><td>11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>东城</td><td>7</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>顺义</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>怀柔</td><td>5</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>门头沟</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>延庆</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>地区待确认</td><td>0</td><td>1</td><td>34</td><td>0</td><td>0</td><td>14</td></tr>
+		<tr class="alt"><td>上海</td><td>257</td><td>1</td><td>25</td><td>14</td><td>0</td><td>10</td></tr>
+		<tr><td>外地来沪</td><td>89</td><td>0</td><td>5</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>浦东</td><td>47</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>宝山</td><td>15</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>静安</td><td>14</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>徐汇</td><td>14</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>闵行</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>长宁</td><td>10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>松江</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>奉贤</td><td>8</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>虹口</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>普陀</td><td>7</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>杨浦</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>青浦</td><td>5</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>黄浦</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>嘉定</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>金山</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>崇明</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>地区待确认</td><td>0</td><td>1</td><td>20</td><td>0</td><td>0</td><td>10</td></tr>
+		<tr class="alt"><td>黑龙江</td><td>227</td><td>3</td><td>8</td><td>37</td><td>1</td><td>1</td></tr>
+		<tr><td>哈尔滨</td><td>82</td><td>0</td><td>6</td><td>9</td><td>0</td><td>0</td></tr>
+		<tr><td>绥化</td><td>29</td><td>2</td><td>0</td><td>5</td><td>0</td><td>0</td></tr>
+		<tr><td>齐齐哈尔</td><td>26</td><td>0</td><td>0</td><td>6</td><td>0</td><td>0</td></tr>
+		<tr><td>鸡西</td><td>21</td><td>0</td><td>0</td><td>9</td><td>0</td><td>0</td></tr>
+		<tr><td>双鸭山</td><td>20</td><td>0</td><td>1</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>大庆</td><td>13</td><td>1</td><td>0</td><td>2</td><td>1</td><td>0</td></tr>
+		<tr><td>佳木斯</td><td>12</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+		<tr><td>牡丹江</td><td>10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>七台河</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>大兴安岭</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>鹤岗</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>黑河</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>福建</td><td>215</td><td>0</td><td>14</td><td>10</td><td>0</td><td>3</td></tr>
+		<tr><td>福州</td><td>56</td><td>0</td><td>6</td><td>1</td><td>0</td><td>2</td></tr>
+		<tr><td>莆田</td><td>42</td><td>0</td><td>1</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>泉州</td><td>39</td><td>0</td><td>4</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>厦门</td><td>21</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>漳州</td><td>16</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+		<tr><td>宁德</td><td>16</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>南平</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>三明</td><td>11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>龙岩</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>陕西</td><td>173</td><td>0</td><td>9</td><td>8</td><td>0</td><td>3</td></tr>
+		<tr><td>西安</td><td>74</td><td>0</td><td>5</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>安康</td><td>21</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>汉中</td><td>20</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>咸阳</td><td>15</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>宝鸡</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>渭南</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>铜川</td><td>7</td><td>0</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+		<tr><td>延安</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>商洛</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>榆林</td><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>韩城</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>杨凌示范区</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>广西</td><td>168</td><td>0</td><td>14</td><td>18</td><td>0</td><td>0</td></tr>
+		<tr><td>北海</td><td>31</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>南宁</td><td>30</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>桂林</td><td>27</td><td>0</td><td>5</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>柳州</td><td>20</td><td>0</td><td>3</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>防城港</td><td>15</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>河池</td><td>11</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>玉林</td><td>8</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>钦州</td><td>7</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>贵港</td><td>7</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>梧州</td><td>5</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>贺州</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>百色</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>来宾</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>河北</td><td>157</td><td>1</td><td>14</td><td>22</td><td>0</td><td>8</td></tr>
+		<tr><td>石家庄</td><td>24</td><td>0</td><td>4</td><td>3</td><td>0</td><td>3</td></tr>
+		<tr><td>沧州</td><td>21</td><td>1</td><td>2</td><td>1</td><td>0</td><td>2</td></tr>
+		<tr><td>邢台</td><td>19</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>邯郸</td><td>18</td><td>0</td><td>2</td><td>4</td><td>0</td><td>2</td></tr>
+		<tr><td>保定</td><td>17</td><td>0</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>唐山</td><td>17</td><td>0</td><td>0</td><td>5</td><td>0</td><td>0</td></tr>
+		<tr><td>廊坊</td><td>14</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>张家口</td><td>12</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td></tr>
+		<tr><td>衡水</td><td>7</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>承德</td><td>5</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>秦皇岛</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>云南</td><td>133</td><td>0</td><td>6</td><td>9</td><td>0</td><td>1</td></tr>
+		<tr><td>昆明</td><td>40</td><td>0</td><td>0</td><td>5</td><td>0</td><td>0</td></tr>
+		<tr><td>西双版纳州</td><td>15</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>玉溪</td><td>13</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>曲靖</td><td>10</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>大理</td><td>10</td><td>0</td><td>1</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>昭通市</td><td>10</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>保山市</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>丽江市</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>红河</td><td>5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>德宏州</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>普洱</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>楚雄州</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>临沧</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>文山州</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>海南</td><td>106</td><td>1</td><td>8</td><td>7</td><td>0</td><td>3</td></tr>
+		<tr><td>三亚</td><td>30</td><td>0</td><td>6</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>海口</td><td>18</td><td>0</td><td>2</td><td>2</td><td>0</td><td>2</td></tr>
+		<tr><td>万宁</td><td>11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>儋州</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>琼海</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>澄迈县</td><td>6</td><td>1</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>临高县</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>陵水县</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>东方</td><td>3</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>定安县</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>昌江县</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>文昌</td><td>3</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>保亭县</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>琼中县</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>乐东</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>辽宁</td><td>94</td><td>0</td><td>5</td><td>5</td><td>0</td><td>1</td></tr>
+		<tr><td>沈阳</td><td>23</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>大连</td><td>14</td><td>0</td><td>3</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>盘锦</td><td>11</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>葫芦岛</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>丹东</td><td>7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>锦州</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>阜新</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>朝阳市</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>铁岭</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>本溪</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>鞍山</td><td>3</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>辽阳</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>营口</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>山西</td><td>90</td><td>0</td><td>9</td><td>9</td><td>0</td><td>4</td></tr>
+		<tr><td>晋中</td><td>26</td><td>0</td><td>3</td><td>5</td><td>0</td><td>1</td></tr>
+		<tr><td>运城</td><td>17</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>太原</td><td>9</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>大同</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>晋城</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>吕梁</td><td>6</td><td>0</td><td>3</td><td>1</td><td>0</td><td>2</td></tr>
+		<tr><td>长治</td><td>5</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>朔州</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>阳泉</td><td>3</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>忻州</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>临汾</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr class="alt"><td>天津</td><td>78</td><td>1</td><td>2</td><td>9</td><td>0</td><td>0</td></tr>
+		<tr><td>宝坻区</td><td>21</td><td>1</td><td>0</td><td>6</td><td>0</td><td>0</td></tr>
+		<tr><td>河北区</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>河东区</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>和平区</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>外地来津</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>河西区</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>西青区</td><td>4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>宁河区</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>东丽区</td><td>4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>南开区</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>红桥区</td><td>2</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>滨海新区</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>津南区</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>北辰区</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>地区待确认</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>贵州</td><td>71</td><td>1</td><td>6</td><td>7</td><td>0</td><td>0</td></tr>
+		<tr><td>贵阳</td><td>15</td><td>0</td><td>1</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>毕节</td><td>13</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>遵义</td><td>11</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>六盘水</td><td>9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>铜仁</td><td>6</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>黔南州</td><td>6</td><td>0</td><td>3</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>黔东南州</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>黔西南州</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>安顺</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>甘肃</td><td>62</td><td>0</td><td>6</td><td>0</td><td>0</td><td>2</td></tr>
+		<tr><td>兰州</td><td>30</td><td>0</td><td>3</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>天水</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>定西</td><td>5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>陇南</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>临夏</td><td>3</td><td>0</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+		<tr><td>白银</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>张掖</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>甘南州</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>庆阳</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>金昌</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>平凉</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>吉林</td><td>60</td><td>0</td><td>4</td><td>6</td><td>0</td><td>2</td></tr>
+		<tr><td>长春</td><td>29</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>四平</td><td>9</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>吉林</td><td>5</td><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>辽源</td><td>5</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>公主岭</td><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>延边</td><td>4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>松原</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>通化</td><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>内蒙古</td><td>46</td><td>0</td><td>4</td><td>4</td><td>0</td><td>1</td></tr>
+		<tr><td>鄂尔多斯</td><td>11</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>包头</td><td>9</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>呼伦贝尔</td><td>5</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+		<tr><td>呼和浩特</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>巴彦淖尔</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>赤峰</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>乌兰察布</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>锡林郭勒</td><td>2</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>乌海</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>兴安盟乌兰浩特</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>通辽</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>宁夏</td><td>40</td><td>0</td><td>1</td><td>6</td><td>0</td><td>0</td></tr>
+		<tr><td>银川</td><td>25</td><td>0</td><td>1</td><td>5</td><td>0</td><td>0</td></tr>
+		<tr><td>吴忠</td><td>8</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>中卫</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>固原</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>宁东管委会</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>石嘴山</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>新疆</td><td>36</td><td>0</td><td>0</td><td>4</td><td>0</td><td>0</td></tr>
+		<tr><td>乌鲁木齐</td><td>15</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>伊犁州</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>兵团第九师</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>昌吉州</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>吐鲁番</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>第七师</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>第八师石河子</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>阿克苏</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>六师五家渠</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>巴州</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>香港</td><td>24</td><td>1</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr><td>香港</td><td>24</td><td>1</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>青海</td><td>18</td><td>0</td><td>3</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>西宁</td><td>15</td><td>0</td><td>3</td><td>1</td><td>0</td><td>0</td></tr>
+		<tr><td>海北州</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr class="alt"><td>台湾</td><td>16</td><td>0</td><td>1</td><td>5</td><td>0</td><td>1</td></tr>
+		<tr><td>地区待确认</td><td>16</td><td>0</td><td>1</td><td>5</td><td>0</td><td>1</td></tr>
+		<tr class="alt"><td>澳门</td><td>10</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr><td>澳门</td><td>10</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+		<tr class="alt"><td>西藏</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><td>地区待确认</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+
+        </table></div>
+      </div>
+                <!-- <div class="mycode" id="main_3"></div> -->
       </section>
 
 
@@ -205,55 +644,112 @@
 
     </div>
 
+       <script type="text/javascript">
+        var dom = document.getElementById("main_1");
+        var myChart_1 = echarts.init(dom);
+        var app = {};
+        option_1 = null;
+        option_1 = {
+            title: {
+                text: '国内疫情概况',
+                subtext: '数据来源腾讯新闻',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                // formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            toolbox: {
+              feature: {
+                  saveAsImage: {}
+              }
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['确诊病例', '疑似病例', '死亡病例', '治愈病例']
+            },
+            series: [
+                {
+                    name: '国内',
+                    type: 'pie',
+                    radius: '45%',
+                    center: ['50%', '60%'],
+                    data: [
+                        // {value: 335, name: '确诊病例'},
+                        		{ name: '确诊病例', value: 28139 },
+		{ name: '疑似病例', value: 24702 },
+		{ name: '死亡病例', value: 564 },
+		{ name: '治愈病例', value: 1344 },
+
+                        
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        ;
+        if (option_1 && typeof option_1 === "object") {
+            myChart_1.setOption(option_1, true);
+        }
+       </script>
+
+
     <script type="text/javascript">
       // 基于准备好的dom，初始化echarts实例
-      var myChart_1 = echarts.init(document.getElementById('main_1'));
+      var myChart_2 = echarts.init(document.getElementById('main_2'));
 
       // 指定图表的配置项和数据
-      var name_title_1 = "新型冠状病毒疫情地图(中国)"
+      var name_title_2 = "新型冠状病毒疫情地图(中国)"
       var mapName = 'china'
       var data = [
           //{ name: '湖北', value:4586 },
-          		{ name: '湖北', value: 16678 },
-		{ name: '浙江', value: 895 },
-		{ name: '广东', value: 895 },
-		{ name: '河南', value: 764 },
-		{ name: '湖南', value: 661 },
-		{ name: '江西', value: 548 },
-		{ name: '安徽', value: 530 },
-		{ name: '重庆', value: 376 },
-		{ name: '江苏', value: 341 },
-		{ name: '山东', value: 307 },
-		{ name: '四川', value: 301 },
-		{ name: '北京', value: 253 },
-		{ name: '上海', value: 243 },
-		{ name: '福建', value: 205 },
-		{ name: '黑龙江', value: 190 },
-		{ name: '陕西', value: 165 },
-		{ name: '广西', value: 150 },
-		{ name: '河北', value: 135 },
-		{ name: '云南', value: 124 },
-		{ name: '海南', value: 99 },
-		{ name: '辽宁', value: 88 },
-		{ name: '山西', value: 81 },
-		{ name: '天津', value: 69 },
-		{ name: '贵州', value: 64 },
-		{ name: '甘肃', value: 57 },
-		{ name: '吉林', value: 54 },
-		{ name: '内蒙古', value: 42 },
-		{ name: '宁夏', value: 34 },
-		{ name: '新疆', value: 32 },
-		{ name: '香港', value: 21 },
-		{ name: '青海', value: 17 },
-		{ name: '台湾', value: 11 },
+          		{ name: '湖北', value: 19665 },
+		{ name: '广东', value: 970 },
+		{ name: '浙江', value: 954 },
+		{ name: '河南', value: 851 },
+		{ name: '湖南', value: 711 },
+		{ name: '江西', value: 600 },
+		{ name: '安徽', value: 591 },
+		{ name: '重庆', value: 400 },
+		{ name: '江苏', value: 373 },
+		{ name: '山东', value: 347 },
+		{ name: '四川', value: 321 },
+		{ name: '北京', value: 274 },
+		{ name: '上海', value: 257 },
+		{ name: '黑龙江', value: 227 },
+		{ name: '福建', value: 215 },
+		{ name: '陕西', value: 173 },
+		{ name: '广西', value: 168 },
+		{ name: '河北', value: 157 },
+		{ name: '云南', value: 133 },
+		{ name: '海南', value: 106 },
+		{ name: '辽宁', value: 94 },
+		{ name: '山西', value: 90 },
+		{ name: '天津', value: 78 },
+		{ name: '贵州', value: 71 },
+		{ name: '甘肃', value: 62 },
+		{ name: '吉林', value: 60 },
+		{ name: '内蒙古', value: 46 },
+		{ name: '宁夏', value: 40 },
+		{ name: '新疆', value: 36 },
+		{ name: '香港', value: 24 },
+		{ name: '青海', value: 18 },
+		{ name: '台湾', value: 16 },
 		{ name: '澳门', value: 10 },
 		{ name: '西藏', value: 1 },
 
       ];
 
-      var option_1 = {
+      var option_2 = {
           title: {
-              text: name_title_1,
+              text: name_title_2,
               x: 'center',
               textStyle: {
                   fontSize: 24
@@ -285,8 +781,8 @@
               type: 'piecewise',
               pieces: [
                   { min: 10000, color: 'rgb(162,8,8)' },
-                  { min: 1000, max: 4999, color: 'rgb(209,23,23)' },
-                  { min: 5000, max: 9999, color: 'rgb(255,19,19)' },
+                  { min: 5000, max: 9999, color: 'rgb(209,23,23)' },
+                  { min: 1000, max: 4999, color: 'rgb(255,19,19)' },
                   { min: 100, max: 999, color: 'rgb(255,50,50)' },
                   { min: 10, max: 99, color: 'rgb(255,113,113)' },
                   { min: 1, max: 9, color: 'rgb(255,174,174)' },
@@ -330,15 +826,15 @@
       };
 
       // 使用刚指定的配置项和数据显示图表。
-      myChart_1.setOption(option_1);
+      myChart_2.setOption(option_2);
     </script>
 
     <script type="text/javascript">
       // 基于准备好的dom，初始化echarts实例
-      var myChart_2 = echarts.init(document.getElementById('main_2'));
+      var myChart_3 = echarts.init(document.getElementById('main_3'));
 
       // 指定图表的配置项和数据
-      var option_2 = {
+      var option_3 = {
           title: {
               text: '新型冠状病毒疫情时间序列数据图',
               x:'center',
@@ -373,7 +869,7 @@
 					['01/23', 830, 1072, 25, 34],
 					['01/24', 1287, 1965, 41, 38],
 					['01/25', 1975, 2684, 56, 49],
-					['01/26', 2744,  5794, 80, 51],
+					['01/26', 2744, 5794, 80, 51],
 					['01/27', 4515, 6973, 106, 60],
 					['01/28', 5974, 9239, 132, 103],
 					['01/29', 7711, 12167, 170, 124],
@@ -382,6 +878,7 @@
 					['02/01', 14380, 19544, 304, 328],
 					['02/02', 17236, 21558, 361, 475],
 					['02/03', 20471, 23214, 425, 632],
+					['02/04', 24363, 23260, 491, 892],
 
               ]
           },
@@ -417,14 +914,14 @@
               {
                   name: '确诊、疑似',
                   type: 'value',
-                  max:25000,
+                  max:29000,
                       interval:1000
               },
               {
                   name: '死亡、治愈',
                   type: 'value',
-                  max:900,
-                      interval:36
+                  max:1160,
+                      interval:40
               }
           ],
           series: [
@@ -499,435 +996,8 @@
       };
 
       // 使用刚指定的配置项和数据显示图表。
-      myChart_2.setOption(option_2);
+      myChart_3.setOption(option_3);
     </script>
-    <script type="text/javascript">
-        var dataCity = [		{ name: '武汉', value: 8351 },
-		{ name: '黄冈', value: 1645 },
-		{ name: '孝感', value: 1462 },
-		{ name: '襄阳', value: 735 },
-		{ name: '荆州', value: 713 },
-		{ name: '随州', value: 706 },
-		{ name: '黄石', value: 509 },
-		{ name: '宜昌', value: 496 },
-		{ name: '荆门', value: 422 },
-		{ name: '咸宁', value: 384 },
-		{ name: '鄂州', value: 382 },
-		{ name: '十堰', value: 318 },
-		{ name: '仙桃', value: 225 },
-		{ name: '恩施州', value: 138 },
-		{ name: '天门', value: 128 },
-		{ name: '潜江', value: 54 },
-		{ name: '神农架', value: 10 },
-		{ name: '地区待确认', value: 0 },
-		{ name: '温州', value: 364 },
-		{ name: '杭州', value: 141 },
-		{ name: '台州', value: 122 },
-		{ name: '宁波', value: 120 },
-		{ name: '金华', value: 44 },
-		{ name: '绍兴', value: 30 },
-		{ name: '嘉兴', value: 27 },
-		{ name: '丽水', value: 16 },
-		{ name: '衢州', value: 15 },
-		{ name: '湖州', value: 9 },
-		{ name: '舟山', value: 7 },
-		{ name: '深圳', value: 291 },
-		{ name: '广州', value: 249 },
-		{ name: '珠海', value: 72 },
-		{ name: '佛山', value: 50 },
-		{ name: '东莞', value: 44 },
-		{ name: '中山', value: 36 },
-		{ name: '惠州', value: 34 },
-		{ name: '汕头', value: 20 },
-		{ name: '湛江', value: 18 },
-		{ name: '肇庆', value: 13 },
-		{ name: '阳江', value: 12 },
-		{ name: '梅州', value: 10 },
-		{ name: '清远', value: 10 },
-		{ name: '江门', value: 7 },
-		{ name: '揭阳', value: 6 },
-		{ name: '韶关', value: 6 },
-		{ name: '茂名', value: 6 },
-		{ name: '汕尾', value: 5 },
-		{ name: '潮州', value: 5 },
-		{ name: '河源', value: 1 },
-		{ name: '地区待确认', value: 0 },
-		{ name: '信阳', value: 138 },
-		{ name: '南阳', value: 107 },
-		{ name: '郑州', value: 92 },
-		{ name: '驻马店', value: 82 },
-		{ name: '商丘', value: 61 },
-		{ name: '周口', value: 56 },
-		{ name: '新乡', value: 39 },
-		{ name: '安阳', value: 35 },
-		{ name: '平顶山', value: 34 },
-		{ name: '漯河', value: 24 },
-		{ name: '许昌', value: 24 },
-		{ name: '洛阳', value: 17 },
-		{ name: '开封', value: 17 },
-		{ name: '焦作', value: 15 },
-		{ name: '鹤壁', value: 10 },
-		{ name: '三门峡', value: 7 },
-		{ name: '濮阳', value: 4 },
-		{ name: '济源示范区', value: 2 },
-		{ name: '地区待确认', value: 0 },
-		{ name: '长沙', value: 164 },
-		{ name: '岳阳', value: 89 },
-		{ name: '邵阳', value: 68 },
-		{ name: '常德', value: 56 },
-		{ name: '娄底', value: 45 },
-		{ name: '益阳', value: 40 },
-		{ name: '衡阳', value: 39 },
-		{ name: '株洲', value: 38 },
-		{ name: '怀化', value: 35 },
-		{ name: '永州', value: 30 },
-		{ name: '郴州', value: 24 },
-		{ name: '湘潭', value: 23 },
-		{ name: '湘西自治州', value: 7 },
-		{ name: '张家界', value: 3 },
-		{ name: '南昌', value: 134 },
-		{ name: '九江', value: 86 },
-		{ name: '上饶', value: 69 },
-		{ name: '新余', value: 69 },
-		{ name: '赣州', value: 48 },
-		{ name: '宜春', value: 48 },
-		{ name: '抚州', value: 44 },
-		{ name: '萍乡', value: 22 },
-		{ name: '吉安', value: 15 },
-		{ name: '鹰潭', value: 9 },
-		{ name: '景德镇', value: 4 },
-		{ name: '合肥', value: 93 },
-		{ name: '阜阳', value: 84 },
-		{ name: '亳州', value: 58 },
-		{ name: '安庆', value: 56 },
-		{ name: '蚌埠', value: 48 },
-		{ name: '六安', value: 34 },
-		{ name: '马鞍山', value: 30 },
-		{ name: '宿州', value: 24 },
-		{ name: '芜湖', value: 23 },
-		{ name: '铜陵', value: 19 },
-		{ name: '淮北', value: 14 },
-		{ name: '淮南', value: 12 },
-		{ name: '滁州', value: 11 },
-		{ name: '池州', value: 11 },
-		{ name: '黄山', value: 9 },
-		{ name: '宣城', value: 4 },
-		{ name: '万州区', value: 67 },
-		{ name: '九龙坡区', value: 19 },
-		{ name: '开州区', value: 18 },
-		{ name: '云阳县', value: 18 },
-		{ name: '江北区', value: 16 },
-		{ name: '渝中区', value: 16 },
-		{ name: '忠县', value: 15 },
-		{ name: '垫江县', value: 15 },
-		{ name: '两江新区', value: 14 },
-		{ name: '綦江区', value: 12 },
-		{ name: '石柱县', value: 12 },
-		{ name: '渝北区', value: 12 },
-		{ name: '长寿区', value: 12 },
-		{ name: '合川区', value: 11 },
-		{ name: '巫溪县', value: 11 },
-		{ name: '奉节县', value: 11 },
-		{ name: '璧山区', value: 8 },
-		{ name: '南岸区', value: 8 },
-		{ name: '巫山县', value: 8 },
-		{ name: '荣昌区', value: 8 },
-		{ name: '大足区', value: 7 },
-		{ name: '铜梁区', value: 7 },
-		{ name: '潼南区', value: 7 },
-		{ name: '大渡口区', value: 7 },
-		{ name: '丰都县', value: 6 },
-		{ name: '江津区', value: 4 },
-		{ name: '高新区', value: 4 },
-		{ name: '涪陵区', value: 3 },
-		{ name: '梁平区', value: 3 },
-		{ name: '巴南区', value: 3 },
-		{ name: '永川区', value: 3 },
-		{ name: '城口县', value: 2 },
-		{ name: '黔江区', value: 2 },
-		{ name: '沙坪坝区', value: 2 },
-		{ name: '彭水县', value: 2 },
-		{ name: '秀山县', value: 1 },
-		{ name: '武隆区', value: 1 },
-		{ name: '酉阳县', value: 1 },
-		{ name: '苏州', value: 55 },
-		{ name: '南京', value: 47 },
-		{ name: '徐州', value: 45 },
-		{ name: '无锡', value: 26 },
-		{ name: '淮安', value: 26 },
-		{ name: '泰州', value: 26 },
-		{ name: '南通', value: 25 },
-		{ name: '常州', value: 24 },
-		{ name: '连云港', value: 20 },
-		{ name: '扬州', value: 15 },
-		{ name: '盐城', value: 15 },
-		{ name: '宿迁', value: 11 },
-		{ name: '镇江', value: 6 },
-		{ name: '青岛', value: 35 },
-		{ name: '临沂', value: 30 },
-		{ name: '济南', value: 29 },
-		{ name: '威海', value: 27 },
-		{ name: '烟台', value: 27 },
-		{ name: '济宁', value: 25 },
-		{ name: '德州', value: 24 },
-		{ name: '枣庄', value: 17 },
-		{ name: '潍坊', value: 16 },
-		{ name: '日照', value: 14 },
-		{ name: '淄博', value: 14 },
-		{ name: '泰安', value: 14 },
-		{ name: '聊城', value: 12 },
-		{ name: '菏泽', value: 12 },
-		{ name: '滨州', value: 11 },
-		{ name: '成都', value: 92 },
-		{ name: '南充', value: 28 },
-		{ name: '广安', value: 24 },
-		{ name: '绵阳', value: 17 },
-		{ name: '达州', value: 17 },
-		{ name: '内江', value: 15 },
-		{ name: '巴中', value: 15 },
-		{ name: '德阳', value: 12 },
-		{ name: '攀枝花', value: 11 },
-		{ name: '泸州', value: 10 },
-		{ name: '甘孜', value: 10 },
-		{ name: '自贡', value: 9 },
-		{ name: '宜宾', value: 7 },
-		{ name: '凉山', value: 7 },
-		{ name: '雅安', value: 6 },
-		{ name: '广元', value: 6 },
-		{ name: '遂宁', value: 5 },
-		{ name: '眉山', value: 5 },
-		{ name: '乐山', value: 2 },
-		{ name: '资阳', value: 2 },
-		{ name: '阿坝州', value: 1 },
-		{ name: '地区待确认', value: 0 },
-		{ name: '海淀', value: 45 },
-		{ name: '朝阳', value: 43 },
-		{ name: '西城', value: 29 },
-		{ name: '大兴', value: 29 },
-		{ name: '外地来京', value: 21 },
-		{ name: '丰台', value: 20 },
-		{ name: '昌平', value: 15 },
-		{ name: '通州', value: 13 },
-		{ name: '房山', value: 11 },
-		{ name: '石景山', value: 7 },
-		{ name: '顺义', value: 6 },
-		{ name: '东城', value: 6 },
-		{ name: '怀柔', value: 4 },
-		{ name: '门头沟', value: 3 },
-		{ name: '延庆', value: 1 },
-		{ name: '地区待确认', value: 0 },
-		{ name: '外地来沪', value: 86 },
-		{ name: '浦东', value: 46 },
-		{ name: '静安', value: 13 },
-		{ name: '徐汇', value: 12 },
-		{ name: '闵行', value: 12 },
-		{ name: '宝山', value: 12 },
-		{ name: '松江', value: 10 },
-		{ name: '长宁', value: 9 },
-		{ name: '虹口', value: 7 },
-		{ name: '奉贤', value: 7 },
-		{ name: '普陀', value: 6 },
-		{ name: '杨浦', value: 6 },
-		{ name: '黄浦', value: 5 },
-		{ name: '青浦', value: 4 },
-		{ name: '嘉定', value: 4 },
-		{ name: '金山', value: 2 },
-		{ name: '崇明', value: 2 },
-		{ name: '地区待确认', value: 0 },
-		{ name: '福州', value: 55 },
-		{ name: '莆田', value: 38 },
-		{ name: '泉州', value: 37 },
-		{ name: '厦门', value: 21 },
-		{ name: '漳州', value: 15 },
-		{ name: '宁德', value: 14 },
-		{ name: '南平', value: 12 },
-		{ name: '三明', value: 11 },
-		{ name: '龙岩', value: 2 },
-		{ name: '哈尔滨', value: 73 },
-		{ name: '绥化', value: 24 },
-		{ name: '齐齐哈尔', value: 20 },
-		{ name: '双鸭山', value: 16 },
-		{ name: '鸡西', value: 12 },
-		{ name: '大庆', value: 11 },
-		{ name: '佳木斯', value: 11 },
-		{ name: '牡丹江', value: 9 },
-		{ name: '七台河', value: 9 },
-		{ name: '大兴安岭', value: 2 },
-		{ name: '鹤岗', value: 2 },
-		{ name: '黑河', value: 1 },
-		{ name: '西安', value: 70 },
-		{ name: '安康', value: 19 },
-		{ name: '汉中', value: 19 },
-		{ name: '咸阳', value: 15 },
-		{ name: '宝鸡', value: 10 },
-		{ name: '渭南', value: 9 },
-		{ name: '铜川', value: 7 },
-		{ name: '延安', value: 7 },
-		{ name: '商洛', value: 6 },
-		{ name: '榆林', value: 1 },
-		{ name: '韩城', value: 1 },
-		{ name: '杨凌示范区', value: 1 },
-		{ name: '北海', value: 29 },
-		{ name: '南宁', value: 28 },
-		{ name: '桂林', value: 26 },
-		{ name: '柳州', value: 17 },
-		{ name: '防城港', value: 13 },
-		{ name: '河池', value: 9 },
-		{ name: '玉林', value: 8 },
-		{ name: '梧州', value: 5 },
-		{ name: '贵港', value: 5 },
-		{ name: '钦州', value: 4 },
-		{ name: '贺州', value: 4 },
-		{ name: '百色', value: 2 },
-		{ name: '石家庄', value: 21 },
-		{ name: '沧州', value: 20 },
-		{ name: '保定', value: 17 },
-		{ name: '邢台', value: 16 },
-		{ name: '邯郸', value: 14 },
-		{ name: '廊坊', value: 13 },
-		{ name: '唐山', value: 12 },
-		{ name: '张家口', value: 10 },
-		{ name: '衡水', value: 5 },
-		{ name: '承德', value: 4 },
-		{ name: '秦皇岛', value: 3 },
-		{ name: '昆明', value: 35 },
-		{ name: '西双版纳州', value: 15 },
-		{ name: '玉溪', value: 12 },
-		{ name: '曲靖', value: 10 },
-		{ name: '昭通市', value: 10 },
-		{ name: '保山市', value: 8 },
-		{ name: '丽江市', value: 7 },
-		{ name: '大理', value: 7 },
-		{ name: '红河', value: 5 },
-		{ name: '德宏州', value: 5 },
-		{ name: '普洱', value: 4 },
-		{ name: '楚雄州', value: 4 },
-		{ name: '临沧', value: 1 },
-		{ name: '文山州', value: 1 },
-		{ name: '三亚', value: 30 },
-		{ name: '海口', value: 16 },
-		{ name: '万宁', value: 11 },
-		{ name: '儋州', value: 10 },
-		{ name: '琼海', value: 6 },
-		{ name: '临高县', value: 5 },
-		{ name: '陵水县', value: 4 },
-		{ name: '澄迈县', value: 4 },
-		{ name: '定安县', value: 3 },
-		{ name: '昌江县', value: 3 },
-		{ name: '东方', value: 2 },
-		{ name: '保亭县', value: 2 },
-		{ name: '琼中县', value: 1 },
-		{ name: '乐东', value: 1 },
-		{ name: '文昌', value: 1 },
-		{ name: '沈阳', value: 22 },
-		{ name: '大连', value: 14 },
-		{ name: '盘锦', value: 8 },
-		{ name: '葫芦岛', value: 7 },
-		{ name: '丹东', value: 7 },
-		{ name: '锦州', value: 7 },
-		{ name: '阜新', value: 7 },
-		{ name: '朝阳市', value: 6 },
-		{ name: '铁岭', value: 3 },
-		{ name: '本溪', value: 3 },
-		{ name: '辽阳', value: 2 },
-		{ name: '营口', value: 1 },
-		{ name: '鞍山', value: 1 },
-		{ name: '晋中', value: 21 },
-		{ name: '运城', value: 17 },
-		{ name: '太原', value: 9 },
-		{ name: '大同', value: 9 },
-		{ name: '晋城', value: 7 },
-		{ name: '吕梁', value: 5 },
-		{ name: '朔州', value: 4 },
-		{ name: '长治', value: 3 },
-		{ name: '忻州', value: 3 },
-		{ name: '阳泉', value: 2 },
-		{ name: '临汾', value: 1 },
-		{ name: '宝坻区', value: 15 },
-		{ name: '河北区', value: 10 },
-		{ name: '河东区', value: 10 },
-		{ name: '和平区', value: 6 },
-		{ name: '外地来津', value: 6 },
-		{ name: '河西区', value: 4 },
-		{ name: '宁河区', value: 4 },
-		{ name: '南开区', value: 3 },
-		{ name: '西青区', value: 3 },
-		{ name: '东丽区', value: 3 },
-		{ name: '红桥区', value: 2 },
-		{ name: '滨海新区', value: 2 },
-		{ name: '津南区', value: 1 },
-		{ name: '地区待确认', value: 0 },
-		{ name: '贵阳', value: 12 },
-		{ name: '毕节', value: 11 },
-		{ name: '六盘水', value: 9 },
-		{ name: '遵义', value: 9 },
-		{ name: '铜仁', value: 6 },
-		{ name: '黔南州', value: 6 },
-		{ name: '黔东南州', value: 5 },
-		{ name: '黔西南州', value: 3 },
-		{ name: '安顺', value: 3 },
-		{ name: '兰州', value: 30 },
-		{ name: '天水', value: 10 },
-		{ name: '陇南', value: 4 },
-		{ name: '临夏', value: 3 },
-		{ name: '定西', value: 3 },
-		{ name: '张掖', value: 2 },
-		{ name: '白银', value: 1 },
-		{ name: '金昌', value: 1 },
-		{ name: '平凉', value: 1 },
-		{ name: '甘南州', value: 1 },
-		{ name: '庆阳', value: 1 },
-		{ name: '长春', value: 28 },
-		{ name: '四平', value: 8 },
-		{ name: '吉林', value: 5 },
-		{ name: '公主岭', value: 4 },
-		{ name: '延边', value: 3 },
-		{ name: '辽源', value: 3 },
-		{ name: '松原', value: 2 },
-		{ name: '通化', value: 1 },
-		{ name: '鄂尔多斯', value: 11 },
-		{ name: '包头', value: 7 },
-		{ name: '呼和浩特', value: 5 },
-		{ name: '巴彦淖尔', value: 4 },
-		{ name: '呼伦贝尔', value: 3 },
-		{ name: '赤峰', value: 3 },
-		{ name: '乌兰察布', value: 3 },
-		{ name: '锡林郭勒', value: 2 },
-		{ name: '乌海', value: 2 },
-		{ name: '兴安盟乌兰浩特', value: 1 },
-		{ name: '通辽', value: 1 },
-		{ name: '银川', value: 20 },
-		{ name: '吴忠', value: 7 },
-		{ name: '中卫', value: 3 },
-		{ name: '固原', value: 2 },
-		{ name: '宁东管委会', value: 1 },
-		{ name: '石嘴山', value: 1 },
-		{ name: '乌鲁木齐', value: 12 },
-		{ name: '伊犁州', value: 9 },
-		{ name: '兵团第九师', value: 4 },
-		{ name: '昌吉州', value: 2 },
-		{ name: '吐鲁番', value: 1 },
-		{ name: '第七师', value: 1 },
-		{ name: '第八师石河子', value: 1 },
-		{ name: '阿克苏', value: 1 },
-		{ name: '六师五家渠', value: 1 },
-		{ name: '香港', value: 21 },
-		{ name: '西宁', value: 14 },
-		{ name: '海北州', value: 3 },
-		{ name: '地区待确认', value: 11 },
-		{ name: '澳门', value: 10 },
-		{ name: '地区待确认', value: 1 },
-
-        ];
-        function showData(dataCity) {
-        var str = "";//定义用于拼接的字符串
-            for (var i = 0; i < 2; i++) {
-                str = "<tr><td>" + "123" + "</td><td>" + "234" + "</td></tr>";
-                $("#table_1").html(str); //追加到table中        
-            }
-        }
-    </script>
-
 
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
