@@ -59,17 +59,27 @@ maxTwo = max([int(maxTwo1[0]['dead']), int(maxTwo2[0]['heal'])])
 
 # 构造各市数据
 outall_3 = ''
+outall_3_Name = ''
+outall_3_Num = ''
 for data_3 in data_1:
     strstr = data_3
+
+    outstrName = '\''+strstr['name']+'\','
+    outstrNum = str(strstr['total']['confirm'])+','
+
     out_str = '\t\t<tr class="alt"><td>' + strstr['name'] + '</td><td>'+str(strstr['total']['confirm'])+'</td><td>'+str(strstr['total']['dead'])+'</td><td>'+str(strstr['total']['heal'])+'</td><td>'+str(strstr['today']['confirm'])+'</td><td>'+str(strstr['today']['dead'])+'</td><td>'+str(strstr['today']['heal'])+'</td></tr>\n'
+    
+    outall_3_Name = outall_3_Name + outstrName
+    outall_3_Num = outall_3_Num + outstrNum
     outall_3 = outall_3 +out_str
+    
     data_3 = data_3['children']
     for single in data_3:
         outstr = '\t\t<tr><td>' + single['name'] + '</td><td>'+str(single['total']['confirm'])+'</td><td>'+str(single['total']['dead'])+'</td><td>'+str(single['total']['heal'])+'</td><td>'+str(single['today']['confirm'])+'</td><td>'+str(single['today']['dead'])+'</td><td>'+str(single['today']['heal'])+'</td></tr>\n'
         outall_3 = outall_3 +outstr
 
 outall_3 = outall_3.replace("'","").replace(r"\n","")
-
+outall_3_Num = outall_3_Num.replace("'","").replace(r"\n","")
 # 获取当前时间，并格式化如21:12 on July 24, 2019
 timeNow = time.strftime("%H:%M on %b %d, %Y", time.localtime())
 
@@ -82,6 +92,8 @@ fid.close()
 oriHtml = oriStr.replace('//insertData//',outall_1)
 oriHtml = oriHtml.replace('//dataInsert//',outall_2)
 oriHtml = oriHtml.replace('//dataCity//',outall_3)
+oriHtml = oriHtml.replace('//dataCityName//',outall_3_Name)
+oriHtml = oriHtml.replace('//dataCityNum//',outall_3_Num)
 oriHtml = oriHtml.replace('//dataCountry//',outall_4)
 oriHtml = oriHtml.replace('//TimeNow//',timeNow)
 # 写入线图和柱图的Y轴最大值和分隔区间
